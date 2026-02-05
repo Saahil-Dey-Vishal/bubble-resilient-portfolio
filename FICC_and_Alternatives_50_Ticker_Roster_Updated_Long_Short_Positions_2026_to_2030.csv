@@ -1,0 +1,51 @@
+Ticker,Name,AssetClass,RiskLimitPercent,Position,Rationale
+TLT,iShares 20 Plus Year Treasury Bond ETF,Fixed income,8,Long,Safety asset that should rally if risk assets collapse and liquidity flees to sovereigns.
+IEF,iShares 7 10 Year Treasury Bond ETF,Fixed income,6,Long,Intermediate Treasuries provide duration hedge and capital preservation in credit stress.
+BND,Vanguard Total Bond Market ETF,Fixed income,10,Long,Broad bond exposure to stabilize returns and generate income when equities retract.
+LQD,iShares iBoxx Investment Grade Corporate Bond ETF,Credit,6,Long,High quality corporate credit should outperform lower rated debt during a private credit shock.
+HYG,iShares iBoxx High Yield Corporate Bond ETF,Credit,2,Short,High yield is vulnerable to credit deterioration and forced selling if private credit liquidity dries up.
+EMB,iShares J P Morgan USD Emerging Markets Bond ETF,Emerging market debt,2,Short,Emerging sovereigns are sensitive to global risk off and capital outflows during systemic stress.
+JPST,J P Morgan Ultra Short Income ETF,Cash substitute,5,Long,Ultra short exposure provides a safe harbor and liquidity to deploy into opportunities after dislocations.
+MUB,iShares National Muni Bond ETF,Municipal bonds,3,Long,Municipal bonds offer tax efficient defensive income and relative stability compared to private credit.
+VCIT,Vanguard Intermediate Term Corporate Bond ETF,Credit,4,Long,Intermediate quality corporates balance yield and credit resilience under stress.
+SHY,iShares 1 3 Year Treasury Bond ETF,Cash substitute,3,Long,Short duration Treasuries protect capital while preserving optionality to redeploy after market capitulation.
+PRIV,SPDR SSGA IG Public and Private Credit ETF,Private credit proxy,1,Short,Direct private credit exposure is illiquid and likely to suffer valuation resets if the private credit market tightens.
+VPC,Virtus Private Credit Strategy ETF,Private credit proxy,1,Short,Private credit strategies face funding strain and mark to market losses under a private credit bust scenario.
+PCMM,BondBloxx Private Credit CLO ETF,Private credit CLO,1,Short,CLO and private credit tranches can experience sharp repricing and liquidity shortfalls during stress.
+BKLN,Invesco Senior Loan ETF,Senior loans,2,Short,Senior loans are exposed to credit losses and reduced refinancing in a wider private credit contagion.
+SRLN,SPDR Blackstone Senior Loan ETF,Senior loans,2,Short,Active senior loan managers may face underlying borrower distress and secondary illiquidity.
+GLD,SPDR Gold Shares,Commodity,3,Long,Gold should act as a safe haven and store of value when confidence in risk assets collapses.
+GSG,iShares S P GSCI Commodity Indexed Trust,Commodity,2,Long,Broad commodity exposure can benefit from de risking in financial assets and rotation into real assets.
+VNQ,Vanguard Real Estate ETF,Real assets,3,Long,High quality real estate can provide income and defend against equity drawdowns if leverage unwinds in other areas.
+RWX,SPDR Dow Jones International Real Estate ETF,Real assets,2,Long,Geographic diversification in real estate reduces domestic concentrated credit risks.
+ICLN,iShares Global Clean Energy ETF,Infrastructure,2,Long,Regulated and contracted clean energy assets should see stable cash flows relative to speculative credit.
+REM,iShares Mortgage Real Estate ETF,Real assets,1,Short,Mortgage related equities have high rate and liquidity sensitivity and can collapse in a credit driven panic.
+TIP,iShares TIPS Bond ETF,Inflation linked,4,Long,Inflation linked bonds protect purchasing power if monetary policies react to market shocks.
+IGF,iShares Global Infrastructure ETF,Infrastructure,3,Long,Contracted cash flows from infrastructure assets provide resilience during systemic deleveraging.
+MOO,VanEck Agribusiness ETF,Real assets,1,Long,Food and agribusiness assets retain fundamental demand even under financial stress.
+WOOD,iShares Global Timber and Forestry ETF,Real assets,1,Long,Timber assets are long duration real assets with low correlation to financial market cycles.
+VIXY,ProShares VIX Short Term Futures ETF,Hedge,1,Long,VIX exposure provides tactical crisis insurance during sharp equity sell offs.
+TBF,ProShares Short 20 Year Treasury ETF,Tactical hedge,1,Long,Hold a small inverse Treasury position only if anticipating policy driven rapid rate increases after market stress.
+DBMF,iMGP DBi Managed Futures Strategy ETF,Alternatives,2,Long,Managed futures can capture trend moves and provide crisis alpha across rates commodities and currencies.
+CWB,SPDR Bloomberg Convertible Securities ETF,Convertible bonds,1,Long,Convertible bonds give limited downside with upside optionality if equities stabilize after the bust.
+RPAR,RPAR Risk Parity ETF,Multi asset,3,Long,Risk parity diversifies across assets and reduces reliance on any single market for returns.
+QQQ,Invesco QQQ Trust,Equity tech,3,Short,Concentrated exposure to high multiple tech could see sharp multiple contraction if AI hype collapses.
+SMH,VanEck Semiconductor ETF,Equity tech,2,Short,Semiconductor demand can fall quickly if AI capex is delayed leading to inventory adjustments and margin pressure.
+ROBO,ROBO Global Robotics and Automation ETF,Equity thematic,1,Short,Thematic automation plays are highly sentiment driven and vulnerable to a rotation out of speculative narratives.
+HACK,ETFMG Prime Cyber Security ETF,Equity thematic,1,Long,Cybersecurity has defensive characteristics that should hold value when market confidence drops.
+BOTZ,Global X Robotics and Artificial Intelligence ETF,Equity thematic,1,Short,AI specific thematic ETFs can be collateral damage in an AI valuation correction.
+IGV,iShares Expanded Tech Software ETF,Equity software,2,Short,High multiple software franchises are exposed to demand slowdown and valuation compression in an AI bubble burst.
+XLC,Communication Services Select Sector SPDR Fund,Equity tech,2,Long,Communication platforms with diversified monetization are more resilient and can recover faster after a sell off.
+IYW,iShares U S Technology ETF,Equity tech,2,Short,Broad tech exposure still holds many frothy names that may suffer large drawdowns if AI mania unwinds.
+SOXX,iShares Semiconductor ETF,Equity tech,2,Short,Reduce exposure to cyclical chip demand that can fall if AI investment sentiment retrenches.
+SKYY,First Trust Cloud Computing ETF,Equity tech,2,Short,Cloud services face revenue cyclicality and potential multiple contraction in a tech repricing.
+IBIT,iShares Bitcoin Trust spot ETF,Crypto spot ETF,1,Short,Spot bitcoin is exposed to rapid revaluation if the crypto bubble bursts and leverage unwinds.
+FBTC,Fidelity Wise Origin Bitcoin ETF (spot),Crypto spot ETF,1,Short,Another spot bitcoin vehicle to short as crypto routs could be severe across providers.
+BITO,ProShares Bitcoin Strategy ETF futures based,Crypto futures ETF,1,Short,Futures based bitcoin exposure magnifies downside in a crypto liquidation event due to roll and leverage.
+MSTR,MicroStrategy Incorporated,Equity crypto exposure,1,Short,Corporate bitcoin vehicles can collapse when underlying crypto prices fall and margin pressure mounts.
+MARA,Marathon Digital Holdings,Crypto miner,1,Short,Miners have operating leverage to bitcoin prices and face margin stress during a prolonged crypto slump.
+COIN,Coinbase Global,Crypto infrastructure,1,Short,Exchange revenues fall sharply in a crypto bear market and regulatory costs can compound losses.
+NVDA,NVIDIA Corporation,Equity AI hardware,4,Long,Nvidia has deep moats in AI compute and is likely to retain durable demand even after hype cycles.
+AMD,Advanced Micro Devices Incorporated,Equity AI hardware,2,Long,AMD provides diversification in compute suppliers and should recover as fundamental demand normalizes.
+MSFT,Microsoft Corporation,Equity cloud services,4,Long,Large cloud providers have diversified earnings and balance sheets that can withstand macro stress.
+AMZN,Amazon Corporation,Equity cloud services,3,Long,Amazon has structural cash flow from commerce and cloud that can absorb cyclical shocks.

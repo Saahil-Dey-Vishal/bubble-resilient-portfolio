@@ -1,0 +1,24 @@
+# Local secrets / API keys (do not commit)
+.alphavantage_api_key.txt
+alphavantage_api_key.txt
+
+# Runtime caches (best-effort, safe to ignore)
+.alphavantage_news_cache.json
+
+# Generated outputs / reports
+rebalance_recommendations_latest.csv
+.yahoo_last_watch_snapshot.json
+health_check_report.md
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+
+# Research PDFs (avoid accidental redistribution)
+*.pdf
