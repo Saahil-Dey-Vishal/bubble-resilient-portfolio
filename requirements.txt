@@ -7,3 +7,4 @@ scipy>=1.10
 statsmodels>=0.14
 requests>=2.31
 nbformat>=5.9
+# Note: openbb requires Python < 3.14. Using yfinance + requests directly instead.

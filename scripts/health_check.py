@@ -22,6 +22,7 @@ def main() -> int:
         'Bubble_Resilient_Portfolio.ipynb',
         'Bubble_resilient_portfolio_notebook.py',
         'FICC_and_Alternatives_50_Ticker_Roster_Updated_Long_Short_Positions_2026_to_2030.csv',
+        'bubble_events_database.csv',
         'requirements.txt',
     ]
     missing_files = [p for p in required_files if not (root / p).exists()]
@@ -54,6 +55,16 @@ def main() -> int:
         roster_info['cols'] = [str(c) for c in roster_df.columns.tolist()]
     except Exception as e:
         roster_info['error'] = f'{type(e).__name__}: {str(e)[:200]}'
+
+    # Bubble events DB sanity (expanded labeling for Section 12 validation)
+    bubble_events_info: dict[str, object] = {}
+    bubble_events_path = root / 'bubble_events_database.csv'
+    try:
+        ev = pd.read_csv(bubble_events_path)
+        bubble_events_info['rows'] = int(len(ev))
+        bubble_events_info['cols'] = [str(c) for c in ev.columns.tolist()]
+    except Exception as e:
+        bubble_events_info['error'] = f'{type(e).__name__}: {str(e)[:200]}'
 
     # Live Yahoo Finance sanity (bubble tickers)
     bubbles = {
@@ -158,6 +169,16 @@ def main() -> int:
         fails.append('One or more required imports failed')
     if roster_info.get('error'):
         fails.append('Roster CSV failed to load')
+    if bubble_events_info.get('error'):
+        fails.append('Bubble events database failed to load')
+    else:
+        rows_val = bubble_events_info.get('rows', 0)
+        try:
+            rows_i = int(rows_val) if isinstance(rows_val, (int, float, str)) else 0
+        except Exception:
+            rows_i = 0
+        if rows_i < 15:
+            fails.append('Bubble events database has < 15 rows (insufficient for expanded validation)')
 
     for t in ['QQQ', 'HYG', 'BTC-USD']:
         r = next((x for x in price_checks if x['ticker'] == t), None)
@@ -173,8 +194,10 @@ def main() -> int:
 
     if nb_compile.get('error'):
         fails.append('Notebook read/compile check failed')
-    elif nb_compile.get('errors'):
-        fails.append(f"Notebook compile errors in {len(nb_compile['errors'])} cells")
+    else:
+        errs = nb_compile.get('errors')
+        if isinstance(errs, list) and errs:
+            fails.append(f"Notebook compile errors in {len(errs)} cells")
 
     status = 'PASS' if not fails else 'FAIL'
     if status == 'PASS' and warns:
@@ -191,6 +214,16 @@ def main() -> int:
     lines.append(f'- Jupyter available: `{bool(jupyter_path)}`' + (f' (`{jupyter_path}`)' if jupyter_path else ''))
     lines.append('')
 
+    lines.append('## Bubble events database')
+    if bubble_events_info.get('error'):
+        lines.append(f"- ERROR: {bubble_events_info['error']}")
+    else:
+        cols_val = bubble_events_info.get('cols')
+        cols = cols_val if isinstance(cols_val, list) else []
+        lines.append(f"- Rows: {bubble_events_info.get('rows')}")
+        lines.append(f"- Columns: {cols[:25]}" + (' ...' if len(cols) > 25 else ''))
+    lines.append('')
+
     lines.append('## Required files')
     for p in required_files:
         lines.append(f"- {p}: {'ok' if (root / p).exists() else 'MISSING'}")
@@ -205,7 +238,8 @@ def main() -> int:
     if roster_info.get('error'):
         lines.append(f"- ERROR: {roster_info['error']}")
     else:
-        cols = roster_info.get('cols') or []
+        cols_val = roster_info.get('cols')
+        cols = cols_val if isinstance(cols_val, list) else []
         lines.append(f"- Rows: {roster_info.get('rows')}")
         lines.append(f"- Columns: {cols[:20]}" + (' ...' if len(cols) > 20 else ''))
     lines.append('')
@@ -223,9 +257,10 @@ def main() -> int:
         lines.append(f"- ERROR: {nb_compile['error']}")
     else:
         lines.append(f"- Code cells: {nb_compile.get('code_cells')}")
-        errs = nb_compile.get('errors') or []
+        errs_val = nb_compile.get('errors')
+        errs = errs_val if isinstance(errs_val, list) else []
         lines.append(f"- Compile errors: {len(errs)}")
-        for i, ename, msg in (errs[:10] if isinstance(errs, list) else []):
+        for i, ename, msg in errs[:10]:
             lines.append(f"  - cell[{i}]: {ename}: {msg}")
 
     lines.append('')
